@@ -10,6 +10,9 @@
 	Funciones
 	-	Sumar vectores
 	-	Restar vectores
+	-	Dibujar cuadrado con punto y vector --> * Importante *
+	-	Dibujar cubo 3D
+	-	Funcion translacion --> @get(x,y); @return(mat3) --> * Importante *
 	-	Vector +- punto
 	-	Modulo vector
 	-	Escalar vector
@@ -22,7 +25,7 @@
 	-	Construccion de recta con 2 puntos
 	-	Construccion de recta con punto y vector
 	-	Construccion de recta con punto y vector perpendicular
-*/
+**/
 
 // variables GLOBALES
 struct {
@@ -61,19 +64,47 @@ struct vec2 {
 	}
 };
 
+struct vec3{
+	float x;
+	float y;
+	float z;
+	vec3(float a = 0.0f, float b = 0.0f, float c = 0.0f){
+		x = a;
+		y = b;
+		z = c;
+	}
+};
+
+
 struct mat2 {
 	float m00;
 	float m01;
 	float m10;
 	float m11;
 
-	mat2(vec2 a = vec2(1,0) , vec2 b = vec2(0,1)) {
+	mat2(vec2 a = vec2(1,0), vec2 b = vec2(0,1)) {
 		m00 = a.x;
 		m01 = a.y;
 		m10 = b.x;
 		m11 = b.y;
 	}
 };
+
+struct mat3{
+	float m000;
+	float m001;
+	float m010;
+	float m011;
+	float m100;
+	float m101;
+	float m110;
+	float m111;
+
+	mat3(vec3 a = vec3(0,0,0), vec3 b = vec3(0,0,1), vec3 c = vec3(0,1,0), vec3 d = vec3(0,1,1), vec3 e = vec3(1,0,0), vec3 f = vec3(1,0,1), vec3 g = vec3(1,1,0), vec3 h = vec3(1,1,1){
+
+	}
+};
+
 
 
 
@@ -135,6 +166,10 @@ void drawVector(vec2 pos, vec2 v) {
 	// SDL_RenderDrawLine(State.r, x0, y0, x1, y1); ....
 }
 
+void drawSquare(mat3 m){
+	
+}
+
 void draw_shape(vec2 pos, mat2 m) {
 	float v[] = {
 		0, 100,
@@ -166,7 +201,8 @@ void render() {
 
 	mat2 m;
 
-	draw_shape(v2, m);
+
+	drawSquare(v2, m);
 
 
 
