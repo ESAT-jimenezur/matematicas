@@ -127,6 +127,7 @@ void drawRecta(SDL_Renderer *renderer, Recta2Ptos r){
 	SDL_RenderDrawLine(renderer, r.v.incrementoX, r.v.incrementoY, r.ptoX, r.ptoY);
 }
 
+
 void drawSquare(SDL_Renderer *renderer, int x, int y, int side) {
 	int half_side = side/2;
 	SDL_RenderDrawLine(renderer, x - half_side, y - half_side, x-half_side, y+half_side);
@@ -171,9 +172,9 @@ Vector restaVectores(Vector v1, Vector v2){
 
 vec3 multMat3xVec3(mat3 m, vec3 v){
 	vec3 vAux;
-	vAux.x = m.m00 * v.x + m.01 * v.y + m.02 * v.z;
-	vAux.y = m.m10 * v.x + m.11 * v.y + m.12 * v.z;
-	vAux.z = m.m20 * v.x + m.21 * v.y + m.22 * v.z;
+	vAux.x = m.m00 * v.x + m.m01 * v.y + m.m02 * v.z;
+	vAux.y = m.m10 * v.x + m.m11 * v.y + m.m12 * v.z;
+	vAux.z = m.m20 * v.x + m.m21 * v.y + m.m22 * v.z;
 	return vAux;
 }
 
@@ -270,7 +271,7 @@ void render() {
 	v.x = 100;
 	v.y = 100;
 
-	drawSquare(mat3Translacion(v.x, v.y));
+	drawSquare(mat3Translacion(v));
 
 
 

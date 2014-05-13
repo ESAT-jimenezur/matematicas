@@ -1,14 +1,86 @@
-﻿Build started 13/05/2014 19:58:17.
-     1>Project "Z:\Matematicas\repo-matematicas\matematicas\test\test\test.vcxproj" on node 2 (build target(s)).
-     1>InitializeBuildStatus:
-         Creating "Debug\test.unsuccessfulbuild" because "AlwaysCreate" was specified.
-       ClCompile:
+﻿Build started 13/05/2014 20:06:31.
+     1>Project "Z:\Matematicas\repo-matematicas\matematicas\test\test\test.vcxproj" on node 2 (ClCompile target(s)).
+     1>ClCompile:
          c:\Archivos de programa\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../SDL2/include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt test.cc
          test.cc
-     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(119): error C2059: syntax error : '}'
-     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(336): fatal error C1004: unexpected end-of-file found
-     1>Done Building Project "Z:\Matematicas\repo-matematicas\matematicas\test\test\test.vcxproj" (build target(s)) -- FAILED.
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(127): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(127): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(127): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(127): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(141): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(141): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(141): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(141): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(194): error C2677: binary '+' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(194): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(194): error C2677: binary '*' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(194): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(195): error C2677: binary '+' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(195): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(195): error C2677: binary '*' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(195): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(196): error C2677: binary '+' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(196): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(196): error C2677: binary '*' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(196): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(199): error C2677: binary '+' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(199): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(199): error C2677: binary '*' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(199): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(200): error C2677: binary '+' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(200): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(200): error C2677: binary '*' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(200): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(201): error C2677: binary '+' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(201): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(201): error C2677: binary '*' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(201): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(204): error C2677: binary '+' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(204): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(204): error C2677: binary '*' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(204): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(205): error C2677: binary '+' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(205): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(205): error C2677: binary '*' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(205): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(206): error C2677: binary '+' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(206): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(206): error C2677: binary '*' : no global operator found which takes type 'mat3' (or there is no acceptable conversion)
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(206): error C2143: syntax error : missing ';' before 'constant'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(224): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(224): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(224): error C2440: 'initializing' : cannot convert from 'mat3' to 'vec3'
+                 No constructor could take the source type, or constructor overload resolution was ambiguous
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(225): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(225): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(225): error C2440: 'initializing' : cannot convert from 'mat3' to 'vec3'
+                 No constructor could take the source type, or constructor overload resolution was ambiguous
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(226): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(226): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(226): error C2440: 'initializing' : cannot convert from 'mat3' to 'vec3'
+                 No constructor could take the source type, or constructor overload resolution was ambiguous
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(227): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(227): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(227): error C2440: 'initializing' : cannot convert from 'mat3' to 'vec3'
+                 No constructor could take the source type, or constructor overload resolution was ambiguous
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(229): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(229): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(229): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(229): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(230): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(230): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(230): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(230): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(231): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(231): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(231): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(231): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(232): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(232): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(232): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(232): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>Done Building Project "Z:\Matematicas\repo-matematicas\matematicas\test\test\test.vcxproj" (ClCompile target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:06.21
+Time Elapsed 00:00:05.06
