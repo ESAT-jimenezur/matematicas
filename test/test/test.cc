@@ -103,8 +103,8 @@ struct mat3{
 	float m21;
 	float m22;
 
-	mat3(vec3 a = vec3(1, 0, 0), vec3 b = vec3(0, 1, 0), vec3 c = vec3(0, 0, 0){
-		m000 = a.x;
+	mat3(vec3 a = vec3(1, 0, 0), vec3 b = vec3(0, 1, 0), vec3 c = vec3(0, 0, 1)){
+		m00 = a.x;
 		m01 = a.y;
 		m02 = a.z;
 
@@ -177,6 +177,15 @@ vec3 multMat3xVec3(mat3 m, vec3 v){
 	return vAux;
 }
 
+mat3 mat3Translacion(vec2 v){
+	mat3 mAux;
+
+	mAux.m02 = v.x;
+	mAux.m12 = v.y;
+
+	return mAux;
+}
+
 mat3 multMat3xMat3(mat3 m1, mat3 m2){
 	mat3 mAux;
 	
@@ -209,6 +218,18 @@ void drawVector(vec2 pos, vec2 v) {
 
 void drawSquare(mat3 m){
 	
+	int t = 10;
+
+	vec3 p1 = multMat3xMat3(m, vec3(-t, -t));
+	vec3 p2 = multMat3xMat3(m, vec3(-t, t));
+	vec3 p3 = multMat3xMat3(m, vec3(t, t));
+	vec3 p4 = multMat3xMat3(m, vec3(t, -t));
+
+	SDL_RenderDrawLine(State.r, p1.x, p1.y, p2.x, p2.y);
+	SDL_RenderDrawLine(State.r, p2.x, p2.y, p3.x, p3.y);
+	SDL_RenderDrawLine(State.r, p3.x, p3.y, p4.x, p4.y);
+	SDL_RenderDrawLine(State.r, p4.x, p4.y, p1.x, p1.y);
+
 }
 
 void draw_shape(vec2 pos, mat2 m) {
@@ -235,6 +256,7 @@ void drawCube(mat3 m){
 	vec2 p10;
 	vec2 p11;
 
+
 }
 
 void render() {
@@ -244,16 +266,11 @@ void render() {
 
 	//Trabajar aqui
 
+	vec2 v;
+	v.x = 100;
+	v.y = 100;
 
-	vec3 v3;
-	v3.x = 10;
-	v3.y = 10;
-	v3.z = 1;
-
-	mat3 m3;
-
-
-	drawCube(m3);
+	drawSquare(mat3Translacion(v.x, v.y));
 
 
 
