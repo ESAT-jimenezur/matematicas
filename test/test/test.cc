@@ -91,17 +91,30 @@ struct mat2 {
 };
 
 struct mat3{
-	float m000;
-	float m001;
-	float m010;
-	float m011;
-	float m100;
-	float m101;
-	float m110;
-	float m111;
+	float m00;
+	float m01;
+	float m02;
 
-	mat3(vec3 a = vec3(0,0,0), vec3 b = vec3(0,0,1), vec3 c = vec3(0,1,0), vec3 d = vec3(0,1,1), vec3 e = vec3(1,0,0), vec3 f = vec3(1,0,1), vec3 g = vec3(1,1,0), vec3 h = vec3(1,1,1){
+	float m10;
+	float m11;
+	float m12;
 
+	float m20;
+	float m21;
+	float m22;
+
+	mat3(vec3 a = vec3(1, 0, 0), vec3 b = vec3(0, 1, 0), vec3 c = vec3(0, 0, 0){
+		m000 = a.x;
+		m01 = a.y;
+		m02 = a.z;
+
+		m10 = b.x;
+		m11 = b.y;
+		m12 = b.z;
+
+		m20 = c.x;
+		m21 = c.y;
+		m22 = c.z;
 	}
 };
 
@@ -156,6 +169,34 @@ Vector restaVectores(Vector v1, Vector v2){
 	return v3;
 }
 
+vec3 multMat3xVec3(mat3 m, vec3 v){
+	vec3 vAux;
+	vAux.x = m.m00 * v.x + m.01 * v.y + m.02 * v.z;
+	vAux.y = m.m10 * v.x + m.11 * v.y + m.12 * v.z;
+	vAux.z = m.m20 * v.x + m.21 * v.y + m.22 * v.z;
+	return vAux;
+}
+
+mat3 multMat3xMat3(mat3 m1, mat3 m2){
+	mat3 mAux;
+	
+	// Linea 1
+	mAux.m00 = m1.m00 * m2.m00 + m1.m01 * m2.m10 + m1.02 * m2.20;
+	mAux.m01 = m1.m00 * m2.m01 + m1.m01 * m2.m11 + m1.02 * m2.21;
+	mAux.m02 = m1.m00 * m2.m02 + m1.m01 * m2.m12 + m1.02 * m2.22;
+
+	// Linea 2
+	mAux.m10 = m1.m10 * m2.m00 + m1.m11 * m2.m10 + m1.12 * m2.20;
+	mAux.m11 = m1.m10 * m2.m01 + m1.m11 * m2.m11 + m1.12 * m2.21;
+	mAux.m12 = m1.m10 * m2.m02 + m1.m11 * m2.m12 + m1.12 * m2.22;
+
+	// Linea 3
+	mAux.m20 = m1.m20 * m2.m00 + m1.m21 * m2.m10 + m1.22 * m2.20;
+	mAux.m21 = m1.m20 * m2.m01 + m1.m21 * m2.m11 + m1.22 * m2.21;
+	mAux.m22 = m1.m20 * m2.m02 + m1.m21 * m2.m12 + m1.22 * m2.22;
+
+	return mAux;
+}
 
 //-- implementacion --------------------------------------
 vec2 add(vec2 a, vec2 b) {
@@ -187,6 +228,15 @@ void draw_shape(vec2 pos, mat2 m) {
 	}
 }
 
+void drawCube(mat3 m){
+
+	vec2 p00;
+	vec2 p01;
+	vec2 p10;
+	vec2 p11;
+
+}
+
 void render() {
 	SDL_SetRenderDrawColor(State.r, 128, 0, 0, 255);
 	SDL_RenderClear(State.r);
@@ -195,14 +245,15 @@ void render() {
 	//Trabajar aqui
 
 
-	vec2 v2;
-	v2.x = 10;
-	v2.y = 10;
+	vec3 v3;
+	v3.x = 10;
+	v3.y = 10;
+	v3.z = 1;
 
-	mat2 m;
+	mat3 m3;
 
 
-	drawSquare(v2, m);
+	drawCube(m3);
 
 
 
