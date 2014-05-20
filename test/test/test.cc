@@ -1,5 +1,6 @@
 #include <SDL.h>
-
+#include <stdio.h>
+#include <math.h>
 
 /**
 	Estructuras de datos
@@ -127,7 +128,7 @@ void drawRecta(SDL_Renderer *renderer, Recta2Ptos r){
 	SDL_RenderDrawLine(renderer, r.v.incrementoX, r.v.incrementoY, r.ptoX, r.ptoY);
 }
 
-
+/*
 void drawSquare(SDL_Renderer *renderer, int x, int y, int side) {
 	int half_side = side/2;
 	SDL_RenderDrawLine(renderer, x - half_side, y - half_side, x-half_side, y+half_side);
@@ -135,6 +136,7 @@ void drawSquare(SDL_Renderer *renderer, int x, int y, int side) {
 	SDL_RenderDrawLine(renderer, x + half_side, y + half_side, x+half_side, y-half_side);
 	SDL_RenderDrawLine(renderer, x + half_side, y - half_side, x-half_side, y-half_side);
 }
+*/
 
 void drawVector(SDL_Renderer *renderer, Punto p, Vector v){
 	SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255);
@@ -187,23 +189,43 @@ mat3 mat3Translacion(vec2 v){
 	return mAux;
 }
 
+mat3 mat3Rotacion(float radianes){
+	mat3 mAux;
+
+	mAux.m00 = cos(radianes);
+	mAux.m01 = -sin(radianes);
+	mAux.m10 = sin(radianes);
+	mAux.m11 = cos(radianes);
+
+	return mAux;
+}
+
+mat3 mat3Escalado(vec2 v){
+	mat3 mAux;
+
+	mAux.m00 = v.x;
+	mAux.m11 = v.y;
+
+	return mAux;
+}
+
 mat3 multMat3xMat3(mat3 m1, mat3 m2){
 	mat3 mAux;
 	
 	// Linea 1
-	mAux.m00 = m1.m00 * m2.m00 + m1.m01 * m2.m10 + m1.02 * m2.20;
-	mAux.m01 = m1.m00 * m2.m01 + m1.m01 * m2.m11 + m1.02 * m2.21;
-	mAux.m02 = m1.m00 * m2.m02 + m1.m01 * m2.m12 + m1.02 * m2.22;
+	mAux.m00 = m1.m00 * m2.m00 + m1.m01 * m2.m10 + m1.m02 * m2.m20;
+	mAux.m01 = m1.m00 * m2.m01 + m1.m01 * m2.m11 + m1.m02 * m2.m21;
+	mAux.m02 = m1.m00 * m2.m02 + m1.m01 * m2.m12 + m1.m02 * m2.m22;
 
 	// Linea 2
-	mAux.m10 = m1.m10 * m2.m00 + m1.m11 * m2.m10 + m1.12 * m2.20;
-	mAux.m11 = m1.m10 * m2.m01 + m1.m11 * m2.m11 + m1.12 * m2.21;
-	mAux.m12 = m1.m10 * m2.m02 + m1.m11 * m2.m12 + m1.12 * m2.22;
+	mAux.m10 = m1.m10 * m2.m00 + m1.m11 * m2.m10 + m1.m12 * m2.m20;
+	mAux.m11 = m1.m10 * m2.m01 + m1.m11 * m2.m11 + m1.m12 * m2.m21;
+	mAux.m12 = m1.m10 * m2.m02 + m1.m11 * m2.m12 + m1.m12 * m2.m22;
 
 	// Linea 3
-	mAux.m20 = m1.m20 * m2.m00 + m1.m21 * m2.m10 + m1.22 * m2.20;
-	mAux.m21 = m1.m20 * m2.m01 + m1.m21 * m2.m11 + m1.22 * m2.21;
-	mAux.m22 = m1.m20 * m2.m02 + m1.m21 * m2.m12 + m1.22 * m2.22;
+	mAux.m20 = m1.m20 * m2.m00 + m1.m21 * m2.m10 + m1.m22 * m2.m20;
+	mAux.m21 = m1.m20 * m2.m01 + m1.m21 * m2.m11 + m1.m22 * m2.m21;
+	mAux.m22 = m1.m20 * m2.m02 + m1.m21 * m2.m12 + m1.m22 * m2.m22;
 
 	return mAux;
 }
@@ -220,11 +242,11 @@ void drawVector(vec2 pos, vec2 v) {
 void drawSquare(mat3 m){
 	
 	int t = 10;
-
-	vec3 p1 = multMat3xMat3(m, vec3(-t, -t));
-	vec3 p2 = multMat3xMat3(m, vec3(-t, t));
-	vec3 p3 = multMat3xMat3(m, vec3(t, t));
-	vec3 p4 = multMat3xMat3(m, vec3(t, -t));
+	
+	vec3 p1 = multMat3xVec3(m, vec3(-t, -t, 1));
+	vec3 p2 = multMat3xVec3(m, vec3(-t, t, 1));
+	vec3 p3 = multMat3xVec3(m, vec3(t, t, 1));
+	vec3 p4 = multMat3xVec3(m, vec3(t, -t, 1));
 
 	SDL_RenderDrawLine(State.r, p1.x, p1.y, p2.x, p2.y);
 	SDL_RenderDrawLine(State.r, p2.x, p2.y, p3.x, p3.y);
@@ -267,14 +289,34 @@ void render() {
 
 	//Trabajar aqui
 
-	vec2 v;
-	v.x = 100;
-	v.y = 100;
+	vec2 centro_pantalla;
+	centro_pantalla.x = 320;
+	centro_pantalla.y = 240;
+	
+	//Transladamos al centro
+	mat3 m_centro = mat3Translacion(centro_pantalla);
 
-	drawSquare(mat3Translacion(v));
+	//Rotamos
+	mat3 m_rotacion = mat3Rotacion(State.frame / 8000);
+	mat3 m_escalado = mat3Escalado(vec2(1.5, 1.5));
+	
+	// Multiplicamos rotacion y centro
+	mat3 mat1_final;
 
+	mat1_final = multMat3xMat3(mat1_final, m_centro); // Primero la llevamos al centro
+	mat1_final = multMat3xMat3(mat1_final, m_rotacion); // Hacemos que rote
+	mat1_final = multMat3xMat3(mat1_final, m_escalado); // Lo hacemos mas grande
+	mat1_final = multMat3xMat3(mat1_final, mat3Translacion(vec2(50, 50))); // Nos la llevamos ms lejos del centro
+	mat1_final = multMat3xMat3(mat1_final, mat3Rotacion(State.frame / 3000)); // Hacemos que vuelva a rotar
 
+	mat3 mat2_final;
+	mat2_final = multMat3xMat3(mat2_final, mat1_final);
 
+		
+	
+	// Pintamos cuadrados
+	drawSquare(mat2_final);
+	
 
 	SDL_RenderPresent(State.r);
 }
