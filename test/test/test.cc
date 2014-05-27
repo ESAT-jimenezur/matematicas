@@ -76,6 +76,19 @@ struct vec3{
 	}
 };
 
+struct vec4{
+	float x;
+	float y;
+	float z;
+	float w;
+	vec3(float a = 0.0f, float b = 0.0f, float c = 0.0f, float d = 0.0f){
+		x = a;
+		y = b;
+		z = c;
+		w = d;
+	}
+};
+
 
 struct mat2 {
 	float m00;
@@ -119,24 +132,54 @@ struct mat3{
 	}
 };
 
+struct mat4{
+	float m00;
+	float m01;
+	float m02;
+	float m03;
 
+	float m10;
+	float m11;
+	float m12;
+	float m13;
 
+	float m20;
+	float m21;
+	float m22;
+	float m23;
 
+	float m30;
+	float m31;
+	float m32;
+	float m33;
+
+	mat4(vec4 a = vec4(1, 0, 0, 0), vec4 b = vec4(0, 1, 0, 0), vec4 c = vec4(0, 0, 1, 0), vec4 d = vec4(0, 0, 0, 1){
+		m00 = a.x;
+		m01 = a.y;
+		m02 = a.z;
+		m03 = a.w;
+
+		m10 = b.x;
+		m11 = b.y;
+		m12 = b.z;
+		m13 = b.w;
+
+		m20 = c.x;
+		m21 = c.y;
+		m22 = c.z;
+		m23 = c.w;
+
+		m30 = d.x;
+		m31 = d.y;
+		m32 = d.z;
+		m33 = d.w;
+	}
+};
 
 
 void drawRecta(SDL_Renderer *renderer, Recta2Ptos r){
 	SDL_RenderDrawLine(renderer, r.v.incrementoX, r.v.incrementoY, r.ptoX, r.ptoY);
 }
-
-/*
-void drawSquare(SDL_Renderer *renderer, int x, int y, int side) {
-	int half_side = side/2;
-	SDL_RenderDrawLine(renderer, x - half_side, y - half_side, x-half_side, y+half_side);
-	SDL_RenderDrawLine(renderer, x - half_side, y + half_side, x+half_side, y+half_side);
-	SDL_RenderDrawLine(renderer, x + half_side, y + half_side, x+half_side, y-half_side);
-	SDL_RenderDrawLine(renderer, x + half_side, y - half_side, x-half_side, y-half_side);
-}
-*/
 
 void drawVector(SDL_Renderer *renderer, Punto p, Vector v){
 	SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255);
@@ -177,6 +220,16 @@ vec3 multMat3xVec3(mat3 m, vec3 v){
 	vAux.x = m.m00 * v.x + m.m01 * v.y + m.m02 * v.z;
 	vAux.y = m.m10 * v.x + m.m11 * v.y + m.m12 * v.z;
 	vAux.z = m.m20 * v.x + m.m21 * v.y + m.m22 * v.z;
+	return vAux;
+}
+
+vec4 multMat4xVec4(mat4 m, vec4 v){
+	vec4 vAux;
+	vAux.x = m.m00 * v.x + m.m01 * v.y + m.m02 * v.z + m.m03 * v.w;
+	vAux.y = m.m10 * v.x + m.m11 * v.y + m.m12 * v.z + m.m13 * v.w;
+	vAux.z = m.m20 * v.x + m.m21 * v.y + m.m22 * v.z + m.m23 * v.w;
+	vAux.w = m.m30 * v.x + m.m31 * v.y + m.m32 * v.z + m.m33 * v.w;
+
 	return vAux;
 }
 
@@ -230,6 +283,49 @@ mat3 multMat3xMat3(mat3 m1, mat3 m2){
 	return mAux;
 }
 
+mat4 multMat4xMat4(mat4 m1, mat4 m2){
+	mat4 mAux;
+	
+	// Linea 1
+	mAux.m00 = m1.m00 * m2.m00 + m1.m01 * m2.m10 + m1.m02 * m2.m20;
+	mAux.m01 = m1.m00 * m2.m01 + m1.m01 * m2.m11 + m1.m02 * m2.m21;
+	mAux.m02 = m1.m00 * m2.m02 + m1.m01 * m2.m12 + m1.m02 * m2.m22;
+	mAux.m03 = m1.m00 * m2.m03 + m1.m01 * m2.m13 + m1.m02 * m2.m23;
+
+	// Linea 2
+	mAux.m10 = m1.m10 * m2.m00 + m1.m11 * m2.m10 + m1.m12 * m2.m20;
+	mAux.m11 = m1.m10 * m2.m01 + m1.m11 * m2.m11 + m1.m12 * m2.m21;
+	mAux.m12 = m1.m10 * m2.m02 + m1.m11 * m2.m12 + m1.m12 * m2.m22;
+	mAux.m13 = m1.m10 * m2.m03 + m1.m11 * m2.m13 + m1.m12 * m2.m23
+
+
+	// Linea 3
+	mAux.m20 = m1.m20 * m2.m00 + m1.m21 * m2.m10 + m1.m22 * m2.m20;
+	mAux.m21 = m1.m20 * m2.m01 + m1.m21 * m2.m11 + m1.m22 * m2.m21;
+	mAux.m22 = m1.m20 * m2.m02 + m1.m21 * m2.m12 + m1.m22 * m2.m22;
+	mAux.m23 = m1.m20 * m2.m03 + m1.m21 * m2.m13 + m1.m22 * m2.m23;
+
+	// Linea 4
+	mAux.m30 = m1.m30 * m2.m00 + m1.m31 * m2.m10 + m1.m32 * m2.m20;
+	mAux.m31 = m1.m30 * m2.m01 + m1.m31 * m2.m11 + m1.m32 * m2.m21;
+	mAux.m32 = m1.m30 * m2.m02 + m1.m31 * m2.m12 + m1.m32 * m2.m22;
+	mAux.m33 = m1.m30 * m2.m03 + m1.m31 * m2.m13 + m1.m32 * m2.m23;
+
+
+	return mAux;
+}
+
+
+void homogeneizar(vec4 v){
+	vec4 vAux;
+	vAux.x = v.x / v.w;
+	vAux.y = v.y / v.w;
+	vAux.z = v.z / v.w;
+	vAux.w = 1;
+
+	return vAux;
+}
+
 //-- implementacion --------------------------------------
 vec2 add(vec2 a, vec2 b) {
 	return vec2(a.x+b.x, a.y+b.y);
@@ -272,13 +368,52 @@ void draw_shape(vec2 pos, mat2 m) {
 	}
 }
 
-void drawCube(mat3 m){
+void drawCube(mat4 m){
 
-	vec2 p00;
-	vec2 p01;
-	vec2 p10;
-	vec2 p11;
+	vec4 p1_1 = multMat3xVec3(m, vec3(-t, -t, 1, -1));
+	homogeneizar(p1_1);
+	vec4 p2_1 = multMat3xVec3(m, vec3(-t, t, 1, -1));
+	homogeneizar(p2_1);
+	vec4 p3_1 = multMat3xVec3(m, vec3(t, t, 1, -1));
+	homogeneizar(p3_1);
+	vec4 p4_1 = multMat3xVec3(m, vec3(t, -t, 1, -1));
+	homogeneizar(p4_1);
 
+
+	vec4 p1_2 = multMat3xVec3(m, vec4(-t, -t, 1, 1));
+	homogeneizar(p1_2);
+	vec4 p2_2 = multMat3xVec3(m, vec4(-t, t, 1, 1));
+	homogeneizar(p2_2);
+	vec4 p3_2 = multMat3xVec3(m, vec4(t, t, 1, 1));
+	homogeneizar(p3_2);
+	vec4 p4_2 = multMat3xVec3(m, vec4(t, -t, 1, 1));
+	homogeneizar(p4_2);
+
+	SDL_RenderDrawLine(State.r, p1_1.x, p1_1.y, p2_1.x, p2_1.y);
+	SDL_RenderDrawLine(State.r, p2_1.x, p2_1.y, p3_1.x, p3_1.y);
+	SDL_RenderDrawLine(State.r, p3_1.x, p3_1.y, p4_1.x, p4_1.y);
+	SDL_RenderDrawLine(State.r, p4_1.x, p4_1.y, p1_1.x, p1_1.y);
+
+	SDL_RenderDrawLine(State.r, p1_2.x, p1_2.y, p2_2.x, p2_2.y);
+	SDL_RenderDrawLine(State.r, p2_2.x, p2_2.y, p3_2.x, p3_2.y);
+	SDL_RenderDrawLine(State.r, p3_2.x, p3_2.y, p4_2.x, p4_2.y);
+	SDL_RenderDrawLine(State.r, p4_2.x, p4_2.y, p1_2.x, p1_2.y);
+
+}
+
+void drawCircle(mat3 m, float nDivisiones){
+
+	float pi = 3.141516;
+
+	for(float i = 0.0; i < 2*pi; i+=0.01){
+
+		SDL_Point point = {
+			sin(i)*m.m00 + m.m02, 
+			cos(i)*m.m11 + m.m12
+		};
+
+		SDL_RenderDrawPoints(State.r, &point, 1);
+	}
 
 }
 
@@ -288,12 +423,31 @@ void render() {
 	SDL_SetRenderDrawColor(State.r, 255,255,255,255);
 
 	//Trabajar aqui
-
+	
 	vec2 centro_pantalla;
 	centro_pantalla.x = 320;
 	centro_pantalla.y = 240;
+
+	mat3 m_centro = mat3Translacion(centro_pantalla);
+	mat3 m_escalado = mat3Escalado(vec2(200, 200));
+
+	mat4 mat1_final;
+
 	
+	/*
 	//Transladamos al centro
+	mat3 m_centro = mat3Translacion(centro_pantalla);
+	mat3 m_escalado = mat3Escalado(vec2(200, 200));
+
+	mat3 mat1_final;
+
+	mat1_final = multMat3xMat3(mat1_final, m_centro);
+	mat1_final = multMat3xMat3(mat1_final, m_escalado); 
+
+	drawCircle(mat1_final, 400.0);
+	*/
+	/*
+
 	mat3 m_centro = mat3Translacion(centro_pantalla);
 
 	//Rotamos
@@ -311,12 +465,12 @@ void render() {
 
 	mat3 mat2_final;
 	mat2_final = multMat3xMat3(mat2_final, mat1_final);
-
+	
 		
 	
 	// Pintamos cuadrados
 	drawSquare(mat2_final);
-	
+	*/
 
 	SDL_RenderPresent(State.r);
 }

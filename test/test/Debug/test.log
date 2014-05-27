@@ -1,60 +1,64 @@
-﻿Build started 20/05/2014 19:51:47.
-     1>Project "Z:\jimenezur\Matematicas\repo-matematicas\matematicas\test\test\test.vcxproj" on node 2 (build target(s)).
+﻿Build started 27/05/2014 19:24:26.
+     1>Project "Z:\Matematicas\repo-matematicas\matematicas\test\test\test.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\test.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          c:\Archivos de programa\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../SDL2/include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt test.cc
          test.cc
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(128): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(128): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(128): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(128): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(143): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(143): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(143): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(143): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(246): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(246): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(247): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(247): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(248): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(248): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(249): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(249): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(251): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(251): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(251): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(251): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(252): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(252): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(252): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(252): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(253): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(253): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(253): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(253): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(254): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(254): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(254): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(254): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>z:\jimenezur\matematicas\repo-matematicas\matematicas\test\test\test.cc(163): warning C4700: uninitialized local variable 'v3' used
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(124): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(124): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(124): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(124): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(129): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(129): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(129): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(129): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(232): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(232): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(233): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(233): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(234): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(234): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(235): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(235): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(237): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(237): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(237): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(237): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(238): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(238): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(238): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(238): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(239): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(239): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(239): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(239): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(240): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(240): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(240): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(240): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(273): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(275): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(278): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(280): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>z:\matematicas\repo-matematicas\matematicas\test\test\test.cc(149): warning C4700: uninitialized local variable 'v3' used
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
-         c:\Archivos de programa\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Z:\jimenezur\Matematicas\repo-matematicas\matematicas\test\test\Debug\test.exe" /INCREMENTAL /NOLOGO /LIBPATH:../SDL2/lib/x86 SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\test.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"Z:\jimenezur\Matematicas\repo-matematicas\matematicas\test\test\Debug\test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Z:\jimenezur\Matematicas\repo-matematicas\matematicas\test\test\Debug\test.lib" /MACHINE:X86 Debug\test.exe.embed.manifest.res
+         c:\Archivos de programa\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Z:\Matematicas\repo-matematicas\matematicas\test\test\Debug\test.exe" /INCREMENTAL /NOLOGO /LIBPATH:../SDL2/lib/x86 SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\test.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"Z:\Matematicas\repo-matematicas\matematicas\test\test\Debug\test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Z:\Matematicas\repo-matematicas\matematicas\test\test\Debug\test.lib" /MACHINE:X86 Debug\test.exe.embed.manifest.res
          Debug\test.obj
        Manifest:
          C:\Archivos de programa\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\test.exe.embed.manifest" /manifest Debug\test.exe.intermediate.manifest
          All outputs are up-to-date.
        LinkEmbedManifest:
-         c:\Archivos de programa\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Z:\jimenezur\Matematicas\repo-matematicas\matematicas\test\test\Debug\test.exe" /INCREMENTAL /NOLOGO /LIBPATH:../SDL2/lib/x86 SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\test.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"Z:\jimenezur\Matematicas\repo-matematicas\matematicas\test\test\Debug\test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Z:\jimenezur\Matematicas\repo-matematicas\matematicas\test\test\Debug\test.lib" /MACHINE:X86 Debug\test.exe.embed.manifest.res
+         c:\Archivos de programa\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Z:\Matematicas\repo-matematicas\matematicas\test\test\Debug\test.exe" /INCREMENTAL /NOLOGO /LIBPATH:../SDL2/lib/x86 SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\test.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"Z:\Matematicas\repo-matematicas\matematicas\test\test\Debug\test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Z:\Matematicas\repo-matematicas\matematicas\test\test\Debug\test.lib" /MACHINE:X86 Debug\test.exe.embed.manifest.res
          Debug\test.obj
-         test.vcxproj -> Z:\jimenezur\Matematicas\repo-matematicas\matematicas\test\test\Debug\test.exe
+         test.vcxproj -> Z:\Matematicas\repo-matematicas\matematicas\test\test\Debug\test.exe
        FinalizeBuildStatus:
          Deleting file "Debug\test.unsuccessfulbuild".
          Touching "Debug\test.lastbuildstate".
-     1>Done Building Project "Z:\jimenezur\Matematicas\repo-matematicas\matematicas\test\test\test.vcxproj" (build target(s)).
+     1>Done Building Project "Z:\Matematicas\repo-matematicas\matematicas\test\test\test.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:09.85
+Time Elapsed 00:00:10.60
