@@ -81,7 +81,7 @@ struct vec4{
 	float y;
 	float z;
 	float w;
-	vec3(float a = 0.0f, float b = 0.0f, float c = 0.0f, float d = 0.0f){
+	vec4(float a = 0.0f, float b = 0.0f, float c = 0.0f, float d = 0.0f){
 		x = a;
 		y = b;
 		z = c;
@@ -153,7 +153,7 @@ struct mat4{
 	float m32;
 	float m33;
 
-	mat4(vec4 a = vec4(1, 0, 0, 0), vec4 b = vec4(0, 1, 0, 0), vec4 c = vec4(0, 0, 1, 0), vec4 d = vec4(0, 0, 0, 1){
+	mat4(vec4 a = vec4(1, 0, 0, 0), vec4 b = vec4(0, 1, 0, 0), vec4 c = vec4(0, 0, 1, 0), vec4 d = vec4(0, 0, 0, 1)){
 		m00 = a.x;
 		m01 = a.y;
 		m02 = a.z;
@@ -296,7 +296,7 @@ mat4 multMat4xMat4(mat4 m1, mat4 m2){
 	mAux.m10 = m1.m10 * m2.m00 + m1.m11 * m2.m10 + m1.m12 * m2.m20;
 	mAux.m11 = m1.m10 * m2.m01 + m1.m11 * m2.m11 + m1.m12 * m2.m21;
 	mAux.m12 = m1.m10 * m2.m02 + m1.m11 * m2.m12 + m1.m12 * m2.m22;
-	mAux.m13 = m1.m10 * m2.m03 + m1.m11 * m2.m13 + m1.m12 * m2.m23
+	mAux.m13 = m1.m10 * m2.m03 + m1.m11 * m2.m13 + m1.m12 * m2.m23;
 
 
 	// Linea 3
@@ -316,7 +316,7 @@ mat4 multMat4xMat4(mat4 m1, mat4 m2){
 }
 
 
-void homogeneizar(vec4 v){
+vec4 homogeneizar(vec4 v){
 	vec4 vAux;
 	vAux.x = v.x / v.w;
 	vAux.y = v.y / v.w;
@@ -370,23 +370,25 @@ void draw_shape(vec2 pos, mat2 m) {
 
 void drawCube(mat4 m){
 
-	vec4 p1_1 = multMat3xVec3(m, vec3(-t, -t, 1, -1));
+	int t = 10;
+
+	vec4 p1_1 = multMat4xVec4(m, vec4(-t, -t, 1, -1));
 	homogeneizar(p1_1);
-	vec4 p2_1 = multMat3xVec3(m, vec3(-t, t, 1, -1));
+	vec4 p2_1 = multMat4xVec4(m, vec4(-t, t, 1, -1));
 	homogeneizar(p2_1);
-	vec4 p3_1 = multMat3xVec3(m, vec3(t, t, 1, -1));
+	vec4 p3_1 = multMat4xVec4(m, vec4(t, t, 1, -1));
 	homogeneizar(p3_1);
-	vec4 p4_1 = multMat3xVec3(m, vec3(t, -t, 1, -1));
+	vec4 p4_1 = multMat4xVec4(m, vec4(t, -t, 1, -1));
 	homogeneizar(p4_1);
 
 
-	vec4 p1_2 = multMat3xVec3(m, vec4(-t, -t, 1, 1));
+	vec4 p1_2 = multMat4xVec4(m, vec4(-t, -t, 1, 1));
 	homogeneizar(p1_2);
-	vec4 p2_2 = multMat3xVec3(m, vec4(-t, t, 1, 1));
+	vec4 p2_2 = multMat4xVec4(m, vec4(-t, t, 1, 1));
 	homogeneizar(p2_2);
-	vec4 p3_2 = multMat3xVec3(m, vec4(t, t, 1, 1));
+	vec4 p3_2 = multMat4xVec4(m, vec4(t, t, 1, 1));
 	homogeneizar(p3_2);
-	vec4 p4_2 = multMat3xVec3(m, vec4(t, -t, 1, 1));
+	vec4 p4_2 = multMat4xVec4(m, vec4(t, -t, 1, 1));
 	homogeneizar(p4_2);
 
 	SDL_RenderDrawLine(State.r, p1_1.x, p1_1.y, p2_1.x, p2_1.y);
@@ -428,11 +430,8 @@ void render() {
 	centro_pantalla.x = 320;
 	centro_pantalla.y = 240;
 
-	mat3 m_centro = mat3Translacion(centro_pantalla);
-	mat3 m_escalado = mat3Escalado(vec2(200, 200));
-
 	mat4 mat1_final;
-
+	drawCube(mat1_final);
 	
 	/*
 	//Transladamos al centro
